@@ -174,9 +174,7 @@ var questionElement;
 var answersElement;
 var resultElement;
 var textMElement;
-var textFElement;
 var portraitMElement;
-var portraitFElement;
 var retryElement
 var parent;
 var endspeech;
@@ -203,13 +201,13 @@ function generateQuestion()
 		
 		portraitMElement = document.getElementById("portraitM");
 		portraitMElement.style.display = "block";
-	
-		portraitFElement = document.getElementById("portraitF");
-		portraitFElement.style.display = "block";
 		
 		retryElement = document.getElementById("retry");
 		retryElement.style.display = "block";
 		
+
+		// Switch, holds the text information of all the possible results. 
+
 		switch(calculateResult())
 		{
 			case "Azorius":
@@ -273,6 +271,7 @@ function generateQuestion()
 		
 		parent = document.getElementById("portraitM");
 		
+		// Switch, holds pictures of all animal folk here.
 		switch(calculateResult())
 		{
 			case "Docile":
@@ -345,85 +344,7 @@ function generateQuestion()
 				parent.appendChild(MissingImage);
 				break;
 			}
-		}
-		
-		parent = document.getElementById("portraitF");
-		
-		switch(calculateResult())
-		{
-			case "Calm":
-			{
-				parent.appendChild(Bulbasaur);
-				break;
-			}
-			case "Brave":
-			{
-				parent.appendChild(Charmander);
-				break;
-			}
-			case "Relaxed":
-			{
-				parent.appendChild(Squirtle);
-				break;
-			}
-			case "Hardy":
-			{
-				parent.appendChild(Pikachu);
-				break;
-			}
-			case "Lonely":
-			{
-				parent.appendChild(Psyduck);
-				break;
-			}
-			case "Impish":
-			{
-				parent.appendChild(Cubone);
-				break;
-			}
-			case "Naive":
-			{
-				parent.appendChild(Eevee);
-				break;
-			}
-			case "Docile":
-			{
-				parent.appendChild(Chikorita);
-				break;
-			}
-			case "Jolly":
-			{
-				parent.appendChild(Totodile);
-				break;
-			}
-			case "Quirky":
-			{
-				parent.appendChild(Treecko);
-				break;
-			}
-			case "Sassy":
-			{
-				parent.appendChild(Torchic);
-				break;	
-			}
-			case "Timid":
-			{
-				parent.appendChild(Mudkip);
-				break;
-			}
-			case "Hasty":
-			{
-				parent.appendChild(Skitty);
-				break;
-			}
-			default:
-			{
-				parent.appendChild(MissingImage);
-				break;
-			}
-		}
-
-		
+		}		
 		return;
 	}
 	
@@ -493,6 +414,8 @@ function generateQuestion()
 	}
 }
 
+
+// Holds the calculation for the results. Obtains the first two highest points.
 function calculateResult()
 {
 
@@ -549,6 +472,8 @@ function calculateResult()
 	}
 }
 
+
+// Calls music file.
 function toggleMusic()
 {
 	var music = document.getElementById("music");
