@@ -142,6 +142,7 @@ var Bat = document.createElement("img");
 var Bird = document.createElement("img");
 var Frog = document.createElement("img");
 var Lizard = document.createElement("img");
+var Otter = document.createElement("img");
 var Mouse = document.createElement("img");
 var Rabbit = document.createElement("img");
 var Racoon = document.createElement("img");
@@ -155,6 +156,7 @@ Bird.src = "Portraits/bird.jpg";
 Frog.src = "Portraits/frog.jpg";
 Lizard.src = "Portraits/lizard.jpg";
 Mouse.src = "Portraits/mouse.jpg";
+Otter.src = "Portraits/otter.jpg";
 Rabbit.src = "Portraits/rabbit.jpg";
 Racoon.src = "Portraits/racoon.jpg";
 Rat.src = "Portraits/rat.jpg";
@@ -328,67 +330,6 @@ function generateQuestion()
 				break;
 			}
 
-
-			case "Hardy":
-			{
-				parent.appendChild(Charmander);
-				break;
-			}
-			case "Jolly":
-			{
-				parent.appendChild(Squirtle);
-				break;
-			}
-			case "Impish":
-			{
-				parent.appendChild(Pikachu);
-				break;
-			}
-			case "Quirky":
-			{
-				parent.appendChild(Meowth);
-				break;
-			}
-			case "Relaxed":
-			{
-				parent.appendChild(Psyduck);
-				break;
-			}
-			case "Brave":
-			{
-				parent.appendChild(Machop);
-				break;
-			}
-			case "Lonely":
-			{
-				parent.appendChild(Cubone);
-				break;
-			}
-			case "Timid":
-			{
-				parent.appendChild(Cyndaquil);
-				break;
-			}
-			case "Naive":
-			{
-				parent.appendChild(Totodile);
-				break;
-			}
-			case "Sassy":
-			{
-				parent.appendChild(Treecko);
-				break;
-			}
-			case "Hasty":
-			{
-				parent.appendChild(Torchic);
-				break;
-			}
-			case "Calm":
-			{
-				parent.appendChild(Mudkip);
-				break;
-			}
 			default:
 			{
 				parent.appendChild(MissingImage);

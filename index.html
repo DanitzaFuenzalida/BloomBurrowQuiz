@@ -10,6 +10,7 @@
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: cover;
+			text-align: center;
 		}
 		
 		@font-face
@@ -49,6 +50,37 @@
 			width: 300px;
 			height: 300px;
 		}
+
+		button
+			{
+				font-family: PKMD;
+				font-size: 32px;
+				margin-right: 20px;
+				text-align: center;
+				margin-bottom: 50px;
+				padding: 10px 50px;
+				width: 60%;
+				color: white;
+				background-color: #212021DF;
+				border-radius: 40px;
+				border: 16px solid transparent;
+				border-image: url(Borders/Border_rb.png) 16;
+			}
+			
+			button:hover
+			{
+				font-size: 32px;
+				text-align: center;
+				margin-bottom: 50px;
+				padding: 10px 50px;
+				width: 60%;
+				color: white;
+				background-color: #696969DF;
+				border-radius: 40px;
+				border: 16px solid transparent;
+				border-image: url(Borders/Border_rb.png) 16;
+			}
+
 		
 		</style>
 	</head>
@@ -65,9 +97,8 @@
 				<p>Then let the interview begin!</p>
             </h1>
 			
-            <h1>
-				<a href="quiz.html">Continue</a>
-            </h1>
+				<button onclick="document.location='quiz.html'">Continue</button>
+
 			<p style="font-size: 24px">This is a fan-made project, all ownership is property of Wizards of The Coast and Nintendo.</p>			
 		</main>
 	</body>
