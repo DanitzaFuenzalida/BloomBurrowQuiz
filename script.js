@@ -1,5 +1,7 @@
 var colors = {White: 0, Blue: 0, Red: 0, Green: 0, Black: 0, Other: 0};
 
+
+// Massive list of all questions, expand further at all times if possible.
 var questions = [
 	{
 		question: "Do you consider yourself tech savvy?",
@@ -109,65 +111,52 @@ var questions = [
 			{answer: "I would rather do something that does not take a century to bear fruit.", points: {Black: 3, Red: 2}},
 		]
 	},
+
+	{
+		question: "Past, present, or future",
+		answers: [
+			{answer: "Past", points: {Green: 3}},
+			{answer: "Present", points: {Red: 3}},
+			{answer: "Future", points: {Blue: 3}}
+		]
+	},
+	
+	{
+		question: "Do you find you're sad more days than not?",
+		answers: [
+			{answer: "Yes", points: {Black: 1, Red: 1}},
+			{answer: "No", points: {White: 1, Green: 1}}
+		]
+	},
 ];
 
+var Bat = document.createElement("img");
+var Bird = document.createElement("img");
+var Frog = document.createElement("img");
+var Lizard = document.createElement("img");
+var Mouse = document.createElement("img");
+var Rabbit = document.createElement("img");
+var Racoon = document.createElement("img");
+var Rat = document.createElement("img");
+var Squirrel = document.createElement("img");
 
-
-var Bulbasaur = document.createElement("img");
-var Charmander = document.createElement("img");
-var Squirtle = document.createElement("img");
-var Pikachu = document.createElement("img");
-var Meowth = document.createElement("img");
-var Psyduck = document.createElement("img");
-var Machop = document.createElement("img");
-var Cubone = document.createElement("img");
-var Vulpix = document.createElement("img");
-var Eevee = document.createElement("img");
-var Chikorita = document.createElement("img");
-var Cyndaquil = document.createElement("img");
-var Totodile = document.createElement("img");
-var Phanpy = document.createElement("img");
-var Treecko = document.createElement("img");
-var Torchic = document.createElement("img");
-var Mudkip = document.createElement("img");
-var Skitty = document.createElement("img");
-var Turtwig = document.createElement("img");
-var Chimchar = document.createElement("img");
-var Piplup = document.createElement("img");
-var Munchlax = document.createElement("img");
-var Shinx = document.createElement("img");
-var Riolu = document.createElement("img");
 var MissingImage = document.createElement("img");
 
-Bulbasaur.src = "Portraits/Bulbasaur.png";
-Charmander.src = "Portraits/Charmander.png";
-Squirtle.src = "Portraits/Squirtle.png";
-Pikachu.src = "Portraits/Pikachu.png";
-Meowth.src = "Portraits/Meowth.png";
-Psyduck.src = "Portraits/Psyduck.png";
-Machop.src = "Portraits/Machop.png";
-Cubone.src = "Portraits/Cubone.png";
-Vulpix.src = "Portraits/Vulpix.png";
-Eevee.src = "Portraits/Eevee.png";
-Chikorita.src = "Portraits/Chikorita.png";
-Cyndaquil.src = "Portraits/Cyndaquil.png";
-Totodile.src = "Portraits/Totodile.png";
-Phanpy.src = "Portraits/Phanpy.png";
-Treecko.src = "Portraits/Treecko.png";
-Torchic.src = "Portraits/Torchic.png";
-Mudkip.src = "Portraits/Mudkip.png";
-Skitty.src = "Portraits/Skitty.png";
-Turtwig.src = "Portraits/Turtwig.png";
-Chimchar.src = "Portraits/Chimchar.png";
-Piplup.src = "Portraits/Piplup.png";
-Munchlax.src = "Portraits/Munchlax.png";
-Shinx.src = "Portraits/Shinx.png";
-Riolu.src = "Portraits/Riolu.png";
+Bat.src = "Portraits/bat.jpg";
+Bird.src = "Portraits/bird.jpg";
+Frog.src = "Portraits/frog.jpg";
+Lizard.src = "Portraits/lizard.jpg";
+Mouse.src = "Portraits/mouse.jpg";
+Rabbit.src = "Portraits/rabbit.jpg";
+Racoon.src = "Portraits/racoon.jpg";
+Rat.src = "Portraits/rat.jpg";
+Squirrel.src = "Portraits/squirrel.jpg";
+
 MissingImage.src = "Portraits/MissingImage.png";
 
 var questionIndex = 0;
 
-var questionsminus8 = questions.length - 8;
+var questionsminus8 = questions.length - 10;
 
 var question;
 var questionElement;
@@ -274,11 +263,67 @@ function generateQuestion()
 		// Switch, holds pictures of all animal folk here.
 		switch(calculateResult())
 		{
-			case "Docile":
+			case "Orzhov":
 			{
-				parent.appendChild(Bulbasaur);
+				parent.appendChild(Bat);
 				break;
 			}
+
+			case "Azorius":
+			{
+				parent.appendChild(Bird);
+				break;
+			}
+
+			case "Boros":
+			{
+				parent.appendChild(Mouse);
+				break;
+			}
+
+			case "Selesnya":
+			{
+				parent.appendChild(Rabbit);
+				break;
+			}
+
+			case "Dimir":
+			{
+				parent.appendChild(Rat);
+				break;
+			}
+
+			case "Izzet":
+			{
+				parent.appendChild(Otter);
+				break;
+			}
+
+			case "Simic":
+			{
+				parent.appendChild(Frog);
+				break;
+			}
+
+			case "Rakdos":
+			{
+				parent.appendChild(Lizard);
+				break;
+			}
+
+			case "Golgari":
+			{
+				parent.appendChild(Squirrel);
+				break;
+			}
+
+			case "Gruul":
+			{
+				parent.appendChild(Racoon);
+				break;
+			}
+
+
 			case "Hardy":
 			{
 				parent.appendChild(Charmander);
@@ -472,8 +517,6 @@ function calculateResult()
 	}
 }
 
-
-// Calls music file.
 function toggleMusic()
 {
 	var music = document.getElementById("music");
