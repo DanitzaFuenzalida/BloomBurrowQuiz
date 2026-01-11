@@ -2,126 +2,27 @@
 <html>
 	<head>
 		<title>Quiz</title>		
+		<link rel="stylesheet" href="style.css">
 		<script src="script.js"></script>
 		
-		<style>
-			
-			body 
-			{
-				background-image: url(PKMDquizbg.gif);
-				background-repeat: no-repeat;
-				background-attachment: fixed;
-				background-size: cover;
-			}
-		
-			@font-face
-			{ 
-				font-family: PKMD; 
-				font-weight: bold; 
-				src: url(PKMD.ttf);
-			}
-	
-			h1
-			{
-				font-size: 32px;
-				text-align: center;
-				margin: 0 15.5% 50px;
-				padding: 10px 50px;
-				width: 60%;
-				color: white;
-				background-color: #212021DF;
-				border-radius: 40px;
-				border: 15px solid transparent;
-				border-image: url(Borders/Border_rb.png) 16;
-			}
-			
-			h2
-			{
-				margin: 0 15% 50px;
-				vertical-align: bottom;
-				text-align: center;
-				display: inline-block;
-			}
-		
-			a
-			{
-				vertical-align: bottom;
-				text-align: center;
-				margin-bottom: 50px;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				display: inline-block;
-			}
-			
-			button
-			{
-				font-family: PKMD;
-				font-size: 32px;
-				margin-right: 20px;
-				text-align: center;
-				margin-bottom: 50px;
-				padding: 10px 50px;
-				width: 60%;
-				color: white;
-				background-color: #212021DF;
-				border-radius: 40px;
-				border: 16px solid transparent;
-				border-image: url(Borders/Border_rb.png) 16;
-			}
-			
-			button:hover
-			{
-				font-size: 32px;
-				text-align: center;
-				margin-bottom: 50px;
-				padding: 10px 50px;
-				width: 60%;
-				color: white;
-				background-color: #696969DF;
-				border-radius: 40px;
-				border: 16px solid transparent;
-				border-image: url(Borders/Border_rb.png) 16;
-			}
-			
-			img
-			{
-				width: 200px;
-				height: 200px;
-			}
-			
-			#musicButton
-			{
-				position: fixed;
-				bottom: 0px;
-				right: 0px;
-				width: 17%;
-			}
-			
-			#retry
-			{
-				margin: 0 41.5% 50px;
-				width: 17%;
-			}
-			
-			#homepage
-			{
-				position: fixed;
-				bottom: 0px;
-				left: 16px;
-				width: 17%;
-			}
+		<script>
+		function clickSfxTryAgain(){
+			clickSfx();
+			setTimeout(() => {
+				location.reload();
+			}, 200);
+		}
 
-			#portraitM img {
-				border: 16px solid transparent;
-				border-image: url(Borders/Border_rb.png) 16;			
-			}
-			
-		</style>
+		function clickSfxHomepage(){
+			clickSfx();
+			setTimeout(() => {
+				history.back();
+			}, 300);
+		}
+		</script>
 	</head>
 
-	<body style="font-family:PKMD" onload="generateQuestion()">
+	<body style="font-family:PKMD" onload="generateQuestion(); toggleMusic()">
 		
 		<h1 id="question"></h1>
 		
@@ -137,16 +38,16 @@
 				
 		</h1>
 		
-		<button id="retry" onclick="location.reload()">Try again?</button>
+		<button id="retry" onclick="clickSfxTryAgain()" onmouseover="hoverSfx()">Try again?</button>
 		
-		<button id="homepage" onclick="history.back()">Homepage</button>
+		<button id="homepage" onclick="clickSfxHomepage()" onmouseover="hoverSfx()">Homepage</button>
 		
 		<br><br>
 		
-		<button id="musicButton" onClick="toggleMusic()">Toggle Music</button>
+		<button id="musicButton" onClick="toggleMusic()" onclick="clickSfx()" onmouseover="hoverSfx()">Toggle Music</button>
 		
 		<audio id="music" src="Music\music.mp3" loop></audio>
-		
+		<audio id="sfxOnClick" src="Music\onClick.mp3"></audio>
+		<audio id="onHover" src="Music\onHover.mp3"></audio>
 	</body>
-	
 </html>

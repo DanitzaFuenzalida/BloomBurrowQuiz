@@ -31,7 +31,7 @@ var questions = [
 	{
 		question: "How do you feel about death?",
 		answers: [
-			{answer: "It is a horrid tragedy", points: {White: 2}},
+			{answer: "It is a horrible tragedy", points: {White: 2}},
 			{answer: "Something that in the future can be cured", points: {Blue: 2}},
 			{answer: "Its an inevitable part of life", points: {Green: 2}},
 			{answer: "It's morbidly beautiful", points: {Black: 2}}
@@ -373,13 +373,26 @@ function generateQuestion()
 		
 		var answer = question.answers[n];
 		var button = document.createElement("button");
+
 		
 		button.innerHTML = answer.answer;
+		
+		button.onmouseover = function(){
+			var sfxOnHover = document.getElementById("onHover");
+			sfxOnHover.volume = 0.5;
+			sfxOnHover.play();
+		};
+		
 		
 		button.onclick = (function(points)
 		{
 			return function()
 			{
+
+				// Sound effect for being clicked on 
+
+				clickSfx();
+				
 				for (var category in points)
 				{
 					if (points.hasOwnProperty(category))
@@ -471,4 +484,16 @@ function toggleMusic()
 	{
 		music.pause();
 	}
+}
+
+function hoverSfx(){
+	var sfxOnHover = document.getElementById("onHover");
+	sfxOnHover.volume = 0.5;
+	sfxOnHover.play();
+}
+
+function clickSfx(){
+	var sfxOnClick = document.getElementById("sfxOnClick");
+	sfxOnClick.volume = 0.5;
+	sfxOnClick.play();
 }
