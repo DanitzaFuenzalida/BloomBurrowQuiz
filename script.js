@@ -1,0 +1,566 @@
+var colors = {White: 0, Blue: 0, Red: 0, Green: 0, Black: 0, Other: 0};
+
+var questions = [
+	{
+		question: "Do you consider yourself tech savvy?",
+		answers: [
+			{answer: "I can code if I want to", points: {Blue: 2}},
+			{answer: "I can work my way around computers", points: {Blue: 1}},
+			{answer: "Computers? What are those?", points: {Green: 2, Blue: -1}}
+		]
+	},
+	{
+		question: "Do you think hope is important?",
+		answers: [
+			{answer: "Sometimes hope is the only weapon we have", points: {White: 2}},
+			{answer: "Hope is nothing without action", points: {White: 1, Red: 1}},
+			{answer: "Hope? Realism is more important", points: {Black: 2}}
+		]
+	},
+	{
+		question: "You find yourself in love, how would you declare yourself?",
+		answers: [
+			{answer: "Say I love you directly, with no nonsense", points: {Blue: 1, Black: 1}},
+			{answer: "Declare my love to the whole world", points: {Red: 1, White: 1}},
+			{answer: "Spend time with them, slowly letting them know", points: {Blue: 1, Green: 1}},
+			{answer: "I don't have to say anything: they already know", points: {Red: 1, Black: 1}}
+		]
+	},
+	{
+		question: "How do you feel about death?",
+		answers: [
+			{answer: "It is a horrid tragedy", points: {White: 2}},
+			{answer: "Something that in the future can be cured", points: {Blue: 2}},
+			{answer: "Its an inevitable part of life", points: {Green: 2}},
+			{answer: "It's morbidly beautiful", points: {Black: 2}}
+		]
+	},
+	{
+		question: "Do you find yourself jumping from relationship to relationship a lot?",
+		answers: [
+			{answer: "Yes", points: {Black: 1, Red: 1}},
+			{answer: "No", points: {White: 1, Blue: 1}}
+		]
+	},
+	{
+		question: "Do you think you're cheerful?",
+		answers: [
+			{answer: "Yes", points: {Red: 3}},
+			{answer: "No", points: {Black: 1, Blue: 1}}
+		]
+	},
+	{
+		question: "What do you think about law and order?",
+		answers: [
+			{answer: "It is one of the biggest tools we have as people to create peace", points: {White: 3}},
+			{answer: "It's a flawed system that needs constant fixing", points: {White: 1, Blue: 1}},
+			{answer: "Its a tool of abuse for the self imposed strongest", points: {Black: 3}}
+		]
+	},
+	{
+		question: "Can you deeply focus on something you like?",
+		answers: [
+			{answer: "Yes", points: {Blue: 1, Green: 1}},
+			{answer: "No", points: {Red: 1}}
+		]
+	},
+	{
+		question: "You find a wallet on the floor, with a few bucks. No one is watching, what would you do?",
+		answers: [
+			{answer: "I'd bring it over to the station, no questions asked", points: {White: 3}},
+			{answer: "I'd leave it where it is, surely its owner is looking for it.", points: {Green: 2}},
+			{answer: "The owner probably wouldn't miss a few bucks, right?", points: {Black: 3}}
+		]
+	},
+	{
+		question: "Do you think there is a point to life?",
+		answers: [
+			{answer: "Yes", points: {White: 1, Green: 1, Red: 1, Blue: 1}},
+			{answer: "No", points: {Black: 4}}
+		]
+	},
+	{
+		question: "Do you tend to find yourself as an outsider to the group?",
+		answers: [
+			{answer: "Yes", points: {Black: 1, Red: 1}},
+			{answer: "No", points: {White: 1, Green: 1}}
+		]
+	},
+	{
+		question: "Do you dream of lounging around idly without much excitement?",
+		answers: [
+			{answer: "Yes", points: {Green: 3}},
+			{answer: "No", points: {Red: 3}}
+		]
+	},
+
+	{
+		question: "Would you rather live a full life with many regrets, or a life of bored contentment?",
+		answers: [
+			{answer: "Life is to be lived! Who cares if I have regrets?", points: {Red: 3}},
+			{answer: "I would rather have everything solved before I kick the bucket.", points: {White: 2, Blue: 1}},
+		]
+	},
+
+	{
+		question: "Can you imagine planting a tree that will take a century to grow?",
+		answers: [
+			{answer: "People will plant trees for shades they will never sit upon.", points: {White: 3, Green: 3}},
+			{answer: "I would rather do something that does not take a century to bear fruit.", points: {Black: 3, Red: 2}},
+		]
+	},
+];
+
+
+
+var Bulbasaur = document.createElement("img");
+var Charmander = document.createElement("img");
+var Squirtle = document.createElement("img");
+var Pikachu = document.createElement("img");
+var Meowth = document.createElement("img");
+var Psyduck = document.createElement("img");
+var Machop = document.createElement("img");
+var Cubone = document.createElement("img");
+var Vulpix = document.createElement("img");
+var Eevee = document.createElement("img");
+var Chikorita = document.createElement("img");
+var Cyndaquil = document.createElement("img");
+var Totodile = document.createElement("img");
+var Phanpy = document.createElement("img");
+var Treecko = document.createElement("img");
+var Torchic = document.createElement("img");
+var Mudkip = document.createElement("img");
+var Skitty = document.createElement("img");
+var Turtwig = document.createElement("img");
+var Chimchar = document.createElement("img");
+var Piplup = document.createElement("img");
+var Munchlax = document.createElement("img");
+var Shinx = document.createElement("img");
+var Riolu = document.createElement("img");
+var MissingImage = document.createElement("img");
+
+Bulbasaur.src = "Portraits/Bulbasaur.png";
+Charmander.src = "Portraits/Charmander.png";
+Squirtle.src = "Portraits/Squirtle.png";
+Pikachu.src = "Portraits/Pikachu.png";
+Meowth.src = "Portraits/Meowth.png";
+Psyduck.src = "Portraits/Psyduck.png";
+Machop.src = "Portraits/Machop.png";
+Cubone.src = "Portraits/Cubone.png";
+Vulpix.src = "Portraits/Vulpix.png";
+Eevee.src = "Portraits/Eevee.png";
+Chikorita.src = "Portraits/Chikorita.png";
+Cyndaquil.src = "Portraits/Cyndaquil.png";
+Totodile.src = "Portraits/Totodile.png";
+Phanpy.src = "Portraits/Phanpy.png";
+Treecko.src = "Portraits/Treecko.png";
+Torchic.src = "Portraits/Torchic.png";
+Mudkip.src = "Portraits/Mudkip.png";
+Skitty.src = "Portraits/Skitty.png";
+Turtwig.src = "Portraits/Turtwig.png";
+Chimchar.src = "Portraits/Chimchar.png";
+Piplup.src = "Portraits/Piplup.png";
+Munchlax.src = "Portraits/Munchlax.png";
+Shinx.src = "Portraits/Shinx.png";
+Riolu.src = "Portraits/Riolu.png";
+MissingImage.src = "Portraits/MissingImage.png";
+
+var questionIndex = 0;
+
+var questionsminus8 = questions.length - 8;
+
+var question;
+var questionElement;
+var answersElement;
+var resultElement;
+var textMElement;
+var textFElement;
+var portraitMElement;
+var portraitFElement;
+var retryElement
+var parent;
+var endspeech;
+
+function generateQuestion()
+{
+
+	if (questions.length === questionsminus8)
+	{
+		questionElement = document.getElementById("question");
+		questionElement.style.display = "none";
+
+		answersElement = document.getElementById("answers");
+		answersElement.style.display = "none";
+
+		resultElement = document.getElementById("result");
+		resultElement.style.display = "block";
+		
+		textMElement = document.getElementById("textM");
+		textMElement.style.display = "block";
+	
+		textFElement = document.getElementById("textF");
+		textFElement.style.display = "block";
+		
+		portraitMElement = document.getElementById("portraitM");
+		portraitMElement.style.display = "block";
+	
+		portraitFElement = document.getElementById("portraitF");
+		portraitFElement.style.display = "block";
+		
+		retryElement = document.getElementById("retry");
+		retryElement.style.display = "block";
+		
+		switch(calculateResult())
+		{
+			case "Azorius":
+			{
+				endspeech = "<p>You seem to be...</p><p>An Azorius!</p><p>Write more here</p><p>";
+				break;
+			}
+			case "Orzhov":
+			{
+				endspeech = "<p>You seem to be...</p><p>An Orzhov!</p><p>Write more here</p><p>";
+				break;
+			}
+			case "Boros":
+			{
+				endspeech = "<p>You seem to be...</p><p>A Boros!</p><p>Write more here</p><p>";
+				break;
+			}
+			case "Selesnya":
+			{
+				endspeech = "<p>You seem to be...</p><p>A Selesnya!</p><p>Write more here</p><p>";
+				break;
+			}
+			case "Dimir":
+			{
+				endspeech = "<p>You seem to be...</p><p>A Dimir!</p><p>Write more here</p><p>";
+				break;
+			}
+			case "Izzet":
+			{
+				endspeech = "<p>You seem to be...</p><p>An Izzet!</p><p>Write more here</p><p>";
+				break;
+			}
+			case "Simic":
+			{
+				endspeech = "<p>You seem to be...</p><p>A Simic!</p><p>Write more here</p><p>";
+				break;
+			}
+			case "Rakdos":
+			{
+				endspeech = "<p>You seem to be...</p><p>A Rakdos!</p><p>Write more here</p><p>";
+				break;
+			}
+			case "Golgari":
+			{
+				endspeech = "<p>You seem to be...</p><p>A Golgari!</p><p>Write more here</p><p>";
+				break;
+			}
+			case "Gruul":
+			{
+				endspeech = "<p>You seem to be...</p><p>A Gruul!</p><p>Write more here</p><p>";
+				break;
+			}
+			default:
+			{
+				endspeech = "<p>You seem to be...</p><p>The... uh, strange...</p><p>You must be a very... something person.</p><p>However, you are reading this, thus it means that something went wrong on my end.</p><p>But, be aware, you did nothing wrong!</p><p>So, uh... i suggest you try it again, sorry for the inconvinience, and if the problem persists, let me know on github.";
+				break;
+			}
+		}
+		
+		resultElement.innerHTML = endspeech;
+		
+		parent = document.getElementById("portraitM");
+		
+		switch(calculateResult())
+		{
+			case "Docile":
+			{
+				parent.appendChild(Bulbasaur);
+				break;
+			}
+			case "Hardy":
+			{
+				parent.appendChild(Charmander);
+				break;
+			}
+			case "Jolly":
+			{
+				parent.appendChild(Squirtle);
+				break;
+			}
+			case "Impish":
+			{
+				parent.appendChild(Pikachu);
+				break;
+			}
+			case "Quirky":
+			{
+				parent.appendChild(Meowth);
+				break;
+			}
+			case "Relaxed":
+			{
+				parent.appendChild(Psyduck);
+				break;
+			}
+			case "Brave":
+			{
+				parent.appendChild(Machop);
+				break;
+			}
+			case "Lonely":
+			{
+				parent.appendChild(Cubone);
+				break;
+			}
+			case "Timid":
+			{
+				parent.appendChild(Cyndaquil);
+				break;
+			}
+			case "Naive":
+			{
+				parent.appendChild(Totodile);
+				break;
+			}
+			case "Sassy":
+			{
+				parent.appendChild(Treecko);
+				break;
+			}
+			case "Hasty":
+			{
+				parent.appendChild(Torchic);
+				break;
+			}
+			case "Calm":
+			{
+				parent.appendChild(Mudkip);
+				break;
+			}
+			default:
+			{
+				parent.appendChild(MissingImage);
+				break;
+			}
+		}
+		
+		parent = document.getElementById("portraitF");
+		
+		switch(calculateResult())
+		{
+			case "Calm":
+			{
+				parent.appendChild(Bulbasaur);
+				break;
+			}
+			case "Brave":
+			{
+				parent.appendChild(Charmander);
+				break;
+			}
+			case "Relaxed":
+			{
+				parent.appendChild(Squirtle);
+				break;
+			}
+			case "Hardy":
+			{
+				parent.appendChild(Pikachu);
+				break;
+			}
+			case "Lonely":
+			{
+				parent.appendChild(Psyduck);
+				break;
+			}
+			case "Impish":
+			{
+				parent.appendChild(Cubone);
+				break;
+			}
+			case "Naive":
+			{
+				parent.appendChild(Eevee);
+				break;
+			}
+			case "Docile":
+			{
+				parent.appendChild(Chikorita);
+				break;
+			}
+			case "Jolly":
+			{
+				parent.appendChild(Totodile);
+				break;
+			}
+			case "Quirky":
+			{
+				parent.appendChild(Treecko);
+				break;
+			}
+			case "Sassy":
+			{
+				parent.appendChild(Torchic);
+				break;	
+			}
+			case "Timid":
+			{
+				parent.appendChild(Mudkip);
+				break;
+			}
+			case "Hasty":
+			{
+				parent.appendChild(Skitty);
+				break;
+			}
+			default:
+			{
+				parent.appendChild(MissingImage);
+				break;
+			}
+		}
+
+		
+		return;
+	}
+	
+	textMElement = document.getElementById("textM");
+	textMElement.style.display = "none";
+	
+	textFElement = document.getElementById("textF");
+	textFElement.style.display = "none";
+	
+	portraitMElement = document.getElementById("portraitM");
+	portraitMElement.style.display = "none";
+	
+	portraitFElement = document.getElementById("portraitF");
+	portraitFElement.style.display = "none";
+	
+	resultElement = document.getElementById("result");
+	resultElement.style.display = "none";
+	
+	retryElement = document.getElementById("retry");
+	retryElement.style.display = "none";
+	
+	if(colors.Other == 0)
+	{
+		questionIndex = Math.floor(Math.random() * questions.length);
+	}
+	else
+	{
+		colors.Other = 0;
+	}
+	
+	question = questions[questionIndex];
+
+	questionElement = document.getElementById("question");
+	questionElement.innerHTML = question.question;
+
+	answersElement = document.getElementById("answers");
+	answersElement.innerHTML = "";
+	
+	for (var n = 0; n < question.answers.length; n++)
+	{
+		
+		var answer = question.answers[n];
+		var button = document.createElement("button");
+		
+		button.innerHTML = answer.answer;
+		
+		button.onclick = (function(points)
+		{
+			return function()
+			{
+				for (var category in points)
+				{
+					if (points.hasOwnProperty(category))
+					{
+						colors[category] += points[category];
+					}
+				}
+
+				questions.splice(questionIndex, 1);
+
+				generateQuestion();
+			};
+		})(answer.points);
+
+		answersElement.appendChild(button);
+		
+	}
+}
+
+function calculateResult()
+{
+
+	// Sort of original colors object
+	let sortedColors = Object.fromEntries(
+    	Object.entries(colors).sort(([, a], [, b]) => b - a)
+	); 
+
+	sortedColors = Object.fromEntries(Object.entries(sortedColors).slice(0, 2));
+
+	// List of all possible point combinations for each personality type
+
+	if (sortedColors.White && sortedColors.Blue) {
+		return "Azorius";
+	}
+	else if (sortedColors.Red && sortedColors.Black) {
+		return "Rakdos";
+	}
+
+	else if (sortedColors.White && sortedColors.Black) {
+		return "Orzhov";
+	}
+
+	else if (sortedColors.White && sortedColors.Red) {
+		return "Boros";
+	}
+
+	else if (sortedColors.Blue && sortedColors.Black) {
+		return "Dimir";
+	}
+
+	else if (sortedColors.Blue && sortedColors.Red) {
+		return "Izzet";
+	}
+
+	else if (sortedColors.Green && sortedColors.White) {
+		return "Selesnya";
+	}
+
+	else if (sortedColors.Blue && sortedColors.Green) {
+		return "Simic";
+	}
+
+	else if (sortedColors.Black && sortedColors.Green) {
+		return "Golgari";
+	}
+
+	else if (sortedColors.Red && sortedColors.Green) {
+		return "Gruul";
+	}
+
+	else {
+		return "MissingIm";
+	}
+}
+
+function toggleMusic()
+{
+	var music = document.getElementById("music");
+	
+	music.volume = 0.5;
+	
+	if (music.paused)
+	{
+		music.play();
+	}
+	else
+	{
+		music.pause();
+	}
+}
