@@ -128,6 +128,14 @@ var questions = [
 			{answer: "No", points: {White: 1, Green: 1}}
 		]
 	},
+
+	{
+		question: "Do you find yourself excited for the future?",
+		answers: [
+			{answer: "Yes", points: {Blue: 3}},
+			{answer: "No", points: {Green: 3}}
+		]
+	},
 ];
 
 var Bat = document.createElement("img");
@@ -184,10 +192,7 @@ function generateQuestion()
 		
 		textMElement = document.getElementById("textM");
 		textMElement.style.display = "block";
-	
-		textFElement = document.getElementById("textF");
-		textFElement.style.display = "block";
-		
+			
 		portraitMElement = document.getElementById("portraitM");
 		portraitMElement.style.display = "block";
 		
@@ -396,15 +401,9 @@ function generateQuestion()
 	textMElement = document.getElementById("textM");
 	textMElement.style.display = "none";
 	
-	textFElement = document.getElementById("textF");
-	textFElement.style.display = "none";
-	
 	portraitMElement = document.getElementById("portraitM");
 	portraitMElement.style.display = "none";
-	
-	portraitFElement = document.getElementById("portraitF");
-	portraitFElement.style.display = "none";
-	
+		
 	resultElement = document.getElementById("result");
 	resultElement.style.display = "none";
 	
