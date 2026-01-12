@@ -99,6 +99,10 @@ button
         border-image: url(Borders/Border_rb.png) 16;
     }
 
+button.small {
+    width: 14%;
+}    
+
 #musicButton
 {
     position: fixed;

@@ -113,6 +113,7 @@ var questions = [
 	},
 
 	{
+		// 15th Question
 		question: "Past, present, or future",
 		answers: [
 			{answer: "Past", points: {Green: 3}},
@@ -148,7 +149,6 @@ var Rabbit = document.createElement("img");
 var Racoon = document.createElement("img");
 var Rat = document.createElement("img");
 var Squirrel = document.createElement("img");
-
 var MissingImage = document.createElement("img");
 
 Bat.src = "Portraits/bat.jpg";
@@ -216,6 +216,8 @@ function generateQuestion()
 							"<p>So an Azorius like you... Would be a Birdfolk!</p>";
 				break;
 			}
+
+			// Rewrite Orzhov
 			case "Orzhov":
 			{
 				endspeech = "<p>You seem to be... A Orzhov! " +
@@ -238,7 +240,7 @@ function generateQuestion()
 							"<p>Go forth! For bravery, for adventure!</p>" +
         					"<p>And if I'm wrong...</p>" +
         					"<p>Then work hard at it to back it up.</p>" +
-							"<p>Remember, you don't have to save the entire world. In hard times, every little helps.</p>" +
+							"<p>Remember, you don't have to save the entire world. In hard times, every little bit helps.</p>" +
 							"<p>So a Boros like you... Would be a Mousefolk!</p>";
 				break;
 			}
@@ -247,7 +249,7 @@ function generateQuestion()
 				endspeech = "<p>You seem to be... A Selesnya! " +
         					"<img src='CombinationSymbols/greenWhite.png' " +
         					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
-        					"<p>You are a quite calm individual. You go with the flow, you don't tend to bother other people too much.</p>" +
+        					"<p>You are quite a calm individual. You go with the flow, you don't tend to bother other people too much.</p>" +
 							"<p>If it was up to you, you wouldn't need to go adventuring or go save the world: you already have all you could ever want.</p>" +
 							"<p>But be careful: sometimes, a little conflict is needed for things to move forwards.</p>" +
 							"<p>Don't be afraid to rock the boat every so often.</p>" +
@@ -266,6 +268,8 @@ function generateQuestion()
 							"<p>So a Dimir like you... Would be a Ratfolk!</p>";
 				break;
 			}
+
+			// Potential rewrite for izzet
 			case "Izzet":
 			{
 				endspeech = "<p>You seem to be... A Izzet! " +
@@ -278,6 +282,8 @@ function generateQuestion()
 							"<p>So a Izzet like you... Would be an Otterfolk!</p>";		
 				break;
 			}
+
+			// Not familiar with Simic
 			case "Simic":
 			{
 				endspeech = "<p>You seem to be... A Simic! " +
