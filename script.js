@@ -172,7 +172,6 @@ var question;
 var questionElement;
 var answersElement;
 var resultElement;
-var textMElement;
 var portraitMElement;
 var retryElement
 var parent;
@@ -191,9 +190,6 @@ function generateQuestion()
 
 		resultElement = document.getElementById("result");
 		resultElement.style.display = "block";
-		
-		textMElement = document.getElementById("textM");
-		textMElement.style.display = "block";
 			
 		portraitMElement = document.getElementById("portraitM");
 		portraitMElement.style.display = "block";
@@ -208,57 +204,137 @@ function generateQuestion()
 		{
 			case "Azorius":
 			{
-				endspeech = "<p>You seem to be...</p><p>An Azorius!</p><p>Write more here</p><p>";
+				endspeech = "<p>You seem to be... A Azorius! " +
+        					"<img src='CombinationSymbols/whiteBlue.png' " +
+        					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
+        					"<p>You are dedicated to the truth. You are logical and hopeful, and you genuinely want the best for people.</p>" +
+							"<p>And would go to the ends of the Earth to protect someone in need.</p>" +
+							"<p>Yet, you might have difficulty thinking of yourself before other... when's the last time you did something kind for yourself?</p>" +
+							"<p>Try doing something just for you every once in a while.</p>" +
+							"<p>So an Azorius like you... Would be a Birdfolk!</p>";
 				break;
 			}
 			case "Orzhov":
 			{
-				endspeech = "<p>You seem to be...</p><p>An Orzhov!</p><p>Write more here</p><p>";
+				endspeech = "<p>You seem to be... A Orzhov! " +
+        					"<img src='CombinationSymbols/whiteBlack.png' " +
+        					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
+							"<p>You struggle sometimes with wanting to be the best for people, and what you want for yourself.</p>" +
+							"<p>You want to do great things for yourself, but also want to help the people around you.</p>" +
+							"<p>But who said these needed to be mutually exclusive?</p>" +
+							"<p>Everything you learn for yourself will come back to help those you love you...</p>" +
+							"<p>Remember, sometimes, things are a lot more intertwined than they appear.</p>" +
+							"<p>So an Orzhov like you... Would be a Batfolk!</p>";
 				break;
 			}
 			case "Boros":
 			{
-				endspeech = "<p>You seem to be...</p><p>A Boros!</p><p>Write more here</p><p>";
+				endspeech = "<p>You seem to be... A Boros! " +
+        					"<img src='CombinationSymbols/redWhite.png' " +
+        					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
+							"<p>You want to be a daring hero! Save the princess, get the treasure, slay the dragon!</p>" +
+							"<p>Go forth! For bravery, for adventure!</p>" +
+        					"<p>And if I'm wrong...</p>" +
+        					"<p>Then work hard at it to back it up.</p>" +
+							"<p>Remember, you don't have to save the entire world. In hard times, every little helps.</p>" +
+							"<p>So a Boros like you... Would be a Mousefolk!</p>";
 				break;
 			}
 			case "Selesnya":
 			{
-				endspeech = "<p>You seem to be...</p><p>A Selesnya!</p><p>Write more here</p><p>";
+				endspeech = "<p>You seem to be... A Selesnya! " +
+        					"<img src='CombinationSymbols/greenWhite.png' " +
+        					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
+        					"<p>You are a quite calm individual. You go with the flow, you don't tend to bother other people too much.</p>" +
+							"<p>If it was up to you, you wouldn't need to go adventuring or go save the world: you already have all you could ever want.</p>" +
+							"<p>But be careful: sometimes, a little conflict is needed for things to move forwards.</p>" +
+							"<p>Don't be afraid to rock the boat every so often.</p>" +
+							"<p>So a Selesnya like you... Would be a Rabbitfolk!</p>";
 				break;
 			}
 			case "Dimir":
 			{
-				endspeech = "<p>You seem to be...</p><p>A Dimir!</p><p>Write more here</p><p>";
+				endspeech = "<p>You seem to be... A Dimir! " +
+        					"<img src='CombinationSymbols/blueBlack.png' " +
+        					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
+							"<p>You love learning about new things, even things that most people would find distasteful.</p>" +
+							"<p>And you may also have some difficulties bonding with other people. Maybe you're a bit of a recluse. Do you worry at times, over what people might say about the things you like?</p>" +
+        					"<p>Well don't worry... There's a lot of people out there just like you.</p>" +
+							"<p>Open up every once in a while, and you might find there's a lot of people who like the same things you do.</p>" +
+							"<p>So a Dimir like you... Would be a Ratfolk!</p>";
 				break;
 			}
 			case "Izzet":
 			{
-				endspeech = "<p>You seem to be...</p><p>An Izzet!</p><p>Write more here</p><p>";
+				endspeech = "<p>You seem to be... A Izzet! " +
+        					"<img src='CombinationSymbols/blueRed.png' " +
+        					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
+        					"<p>You are both as passionate as you are logical. You have a lot of different ideas in your head, but you don't always know how to channel that energy the best way.</p>" +
+							"<p>You want to take risks, but you are scared of what the consequences of doing this might be...</p>" +
+							"<p>Take a deep breath every once in a while. What has to happen has to happen, so stop overthinking all the consequences.</p>" +
+							"<p>Just look at what you want, and go for it.</p>" +
+							"<p>So a Izzet like you... Would be an Otterfolk!</p>";		
 				break;
 			}
 			case "Simic":
 			{
-				endspeech = "<p>You seem to be...</p><p>A Simic!</p><p>Write more here</p><p>";
+				endspeech = "<p>You seem to be... A Simic! " +
+        					"<img src='CombinationSymbols/greenBlue.png' " +
+        					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
+							"<p>You very deeply want to know the world, and all that it hides from you.</p>" +
+							"<p>And you are also very laid back. You are in tune with the world and everything around it.</p>" +
+							"<p>But, perhaps there is such a thing as too laid back?</p>" +
+							"<p>Try using your knowledge for more things every once in a while...</p>" +
+							"<p>So a Simic like you... Would be a Frogfolk!</p>";
 				break;
 			}
 			case "Rakdos":
 			{
-				endspeech = "<p>You seem to be...</p><p>A Rakdos!</p><p>Write more here</p><p>";
+				endspeech = "<p>You seem to be... A Rakdos! " +
+        					"<img src='CombinationSymbols/redBlack.png' " +
+        					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
+							"<p>You are fiery, with a deep desire to do the things you want, with no one to stop you.</p>" +
+							"<p>And you genuinely don't care about what other people think of you!</p>" +
+							"<p>However, maybe you're a little bit reckless as well... doing dangerous things without thinking of the consequences</p>" +
+							"<p>Or how that affects the people around you...</p>" +
+							"<p>Remember: There are people out there who love you. Think of them every once in a while.</p>" +
+							"<p>So a Rakdos like you... Would be a Lizardfolk!</p>";				
 				break;
 			}
 			case "Golgari":
 			{
-				endspeech = "<p>You seem to be...</p><p>A Golgari!</p><p>Write more here</p><p>";
+				endspeech = "<p>You seem to be... A Golgari! " +
+        					"<img src='CombinationSymbols/blackGreen.png' " +
+        					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
+							"<p>You are in complete comfort with everything morbid.</p>" +
+							"<p>Insects, rot, death? You don't mind... you know deep down, this is the way everything has to go.</p>" +
+							"<p>And while there is comfort in fatalism... don't let yourself drown in it too much.</p>" +
+							"<p>This is still the only life you get, make the most out of it." +
+							"<p>I mean, we'll all end six feet under all the same, you might as well enjoy the ride.</p>" +
+							"<p>So a Golgari like you... Would be a Squirrelfolk!</p>";					
 				break;
 			}
 			case "Gruul":
 			{
-				endspeech = "<p>You seem to be...</p><p>A Gruul!</p><p>Write more here</p><p>";
+ 				endspeech =  "<p>You seem to be... A Gruul! " +
+        					"<img src='CombinationSymbols/redGreen.png' " +
+        					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
+							"<p>You are hedonistic. You love to do all the things you want with no one to stop you.</p>" +
+							"<p>Sweets, toys, trashy food, you name it!</p>" +
+							"<p>And you are laid back as a cucumber, you don't worry about a future that might not be.</p>" +
+							"<p>But even then, not worrying at all could be a problem. After all, the future will be your present eventually</p>" +
+							"<p>Work hard every once in a while... You will need to live in the future you created for yourself, after all.</p>" +
+							"<p>So a Gruul like you... Would be a Racoonfolk!</p>";
 				break;
 			}
 			default:
 			{
-				endspeech = "<p>You seem to be...</p><p>The... uh, strange...</p><p>You must be a very... something person.</p><p>However, you are reading this, thus it means that something went wrong on my end.</p><p>But, be aware, you did nothing wrong!</p><p>So, uh... i suggest you try it again, sorry for the inconvinience, and if the problem persists, let me know on github.";
+				endspeech =  "<p>You seem to be...</p>" +
+        					"<p>Uh, a very strange person...</p>" + 
+							"<p>You really weren't supposed to read this. Did you break something?</p>" + 
+							"<p>Or maybe you're just a cheeky hacker.</p>" + 
+							"<p>Yeah, get outta here.</p>";
+				
 				break;
 			}
 		}
@@ -338,9 +414,6 @@ function generateQuestion()
 		}		
 		return;
 	}
-	
-	textMElement = document.getElementById("textM");
-	textMElement.style.display = "none";
 	
 	portraitMElement = document.getElementById("portraitM");
 	portraitMElement.style.display = "none";
