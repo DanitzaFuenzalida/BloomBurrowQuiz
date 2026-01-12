@@ -5,10 +5,10 @@
    		<link rel="stylesheet" href="style.css">
 		<script src="script.js"></script>
 		<script>
-		function clickSfxHome(){
+		function clickSfxHome(length){
 			clickSfx();
 			setTimeout(() => {
-				document.location='quiz.html';
+				document.location='quiz.html#'+length;
 			}, 200);
 		}
 		</script>
@@ -27,7 +27,9 @@
 				<p>Then let the interview begin!</p>
 				<p style="font-size: 24px">This is a fan-made project, all ownership is property of Wizards of The Coast and Nintendo.</p>			
             </h1>
-				<button onclick="clickSfxHome()" onmouseover="hoverSfx()">Continue</button>
+				<button onclick="clickSfxHome(5); " onmouseover="hoverSfx()">5 Questions</button>
+				<button onclick="clickSfxHome(10); " onmouseover="hoverSfx()">10 Questions</button>
+
 		</main>
 
 		<audio id="music" src="Music\music.mp3" loop></audio>

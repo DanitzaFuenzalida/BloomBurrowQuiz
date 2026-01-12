@@ -164,9 +164,11 @@ Squirrel.src = "Portraits/squirrel.jpg";
 
 MissingImage.src = "Portraits/MissingImage.png";
 
-var questionIndex = 0;
 
-var questionsminus8 = questions.length - 10;
+var quizLengthNumber = parseInt(location.hash.substring(1));
+
+var questionIndex = 0;
+var questionsTotal = questions.length - quizLengthNumber;
 
 var question;
 var questionElement;
@@ -180,7 +182,7 @@ var endspeech;
 function generateQuestion()
 {
 
-	if (questions.length === questionsminus8)
+	if (questions.length === questionsTotal)
 	{
 		questionElement = document.getElementById("question");
 		questionElement.style.display = "none";
@@ -204,12 +206,12 @@ function generateQuestion()
 		{
 			case "Azorius":
 			{
-				endspeech = "<p>You seem to be... A Azorius! " +
+				endspeech = "<p>You seem to be... An Azorius! " +
         					"<img src='CombinationSymbols/whiteBlue.png' " +
         					"style='width:40px;height:40px;vertical-align:middle;'></p>" +
         					"<p>You are dedicated to the truth. You are logical and hopeful, and you genuinely want the best for people.</p>" +
 							"<p>And would go to the ends of the Earth to protect someone in need.</p>" +
-							"<p>Yet, you might have difficulty thinking of yourself before other... when's the last time you did something kind for yourself?</p>" +
+							"<p>Yet, you might have difficulty thinking of yourself before others... when's the last time you did something kind for yourself?</p>" +
 							"<p>Try doing something just for you every once in a while.</p>" +
 							"<p>So an Azorius like you... Would be a Birdfolk!</p>";
 				break;
@@ -542,6 +544,8 @@ function calculateResult()
 		return "MissingIm";
 	}
 }
+
+// Music functions
 
 function toggleMusic()
 {
