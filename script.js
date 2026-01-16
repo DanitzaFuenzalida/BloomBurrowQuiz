@@ -242,6 +242,41 @@ var questions = [
 			{answer: "No.", points: {Black: 2}}
 		]
 	},
+
+	{
+		question: "How would you act in a brand new world?",
+		answers: [
+			{answer: "Take a brave step forward.", points: {Red: 3}},
+			{answer: "Turn right around immediately.", points: {Green: 3}}
+		]
+	},
+
+	{
+		question: "Would you follow the life you believe in, even if everyone was against it?",
+		answers: [
+			{answer: "Yes.", points: {Red: 3}},
+			{answer: "No.", points: {White: 3}}
+		]
+	},
+
+	{
+		question: "Where would you rather live?",
+		answers: [
+			{answer: "Your childhood home.", points: {Green: 2, White: 2}},
+			{answer: "An unknown, bustling city.", points: {Red: 3, Black: 1}}
+		]
+	},
+
+
+	// 35th question
+	{
+		question: "Do you ever wish you could travel back to the past?",
+		answers: [
+			{answer: "Yes, things were better back then.", points: {Green: 3}},
+			{answer: "Only as a curiosity.", points: {Blue: 1}},
+			{answer: "Absolutely not, it was the past for a reason.", points: {Blue: 3}}
+		]
+	},
 ];
 
 var Bat = document.createElement("img");
