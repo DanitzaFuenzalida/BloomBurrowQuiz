@@ -4,7 +4,7 @@ var colors = {White: 0, Blue: 0, Red: 0, Green: 0, Black: 0, Other: 0};
 // Massive list of all questions, expand further at all times if possible.
 var questions = [
 	{
-		question: "Do you consider yourself tech savvy?",
+		question: "Do you consider yourself knowledgeable in technology?",
 		answers: [
 			{answer: "I can code if I want to", points: {Blue: 2}},
 			{answer: "I can work my way around computers", points: {Blue: 1}},
@@ -114,7 +114,7 @@ var questions = [
 
 	{
 		// 15th Question
-		question: "Past, present, or future",
+		question: "Past, present, or future?",
 		answers: [
 			{answer: "Past", points: {Green: 3}},
 			{answer: "Present", points: {Red: 3}},
@@ -135,6 +135,111 @@ var questions = [
 		answers: [
 			{answer: "Yes", points: {Blue: 3}},
 			{answer: "No", points: {Green: 3}}
+		]
+	},
+
+	{
+		question: "Do you think lying is ok, as long as its to not hurt someone's feelings?",
+		answers: [
+			{answer: "Absolutely, the persons's feelings are more important", points: {Red: 3}},
+			{answer: "I think I could only do so if it was really important", points: {White: 1, Red: 1}},
+			{answer: "I don't think I can lie, even if it would hurt", points: {White: 3}}
+		]
+	},
+
+	{
+		question: "Do you think the end justifies the means?",
+		answers: [
+			{answer: "Absolutely.", points: {Black: 3}},
+			{answer: "Depends on what we're talking about...", points: {White: 1, Black: 1, Blue: 1}},
+			{answer: "Never.", points: {White: 3}}
+		]
+	},
+
+
+		// 20th question.
+	{
+		question: "Do you think you fall in love easily?",
+		answers: [
+			{answer: "I fall in love hard and fast.", points: {Red: 2}},
+			{answer: "It takes me a while...", points: {Blue: 2}}
+		]
+	},
+
+	{
+		question: "If you could only chose one, what would you choose...?",
+		answers: [
+			{answer: "The guarantee of growing old with my one true love.", points: {Red: 2, White: 1}},
+			{answer: "The power to do anything I want to do at my command.", points: {Black: 2, Red: 1}},
+			{answer: "The knowledge of humanity at my fingertips.", points: {Blue: 2, Black: 1}}
+		]
+	},
+
+	{
+		question: "Do you find yourself eager to get out of bed and act?",
+		answers: [
+			{answer: "I am always looking to do all kinds of things.", points: {Red: 2, Black: 1}},
+			{answer: "I actually have a hard time acting on things, other people have to make me.", points: {Green: 2, White: 1}}
+		]
+	},
+
+	{
+		question: "Which one do you think is humanity's greatest asset?",
+		answers: [
+			{answer: "Logic.", points: {Blue: 3}},
+			{answer: "Emotion.", points: {Red: 3}}
+		]
+	},
+
+	{
+		question: "If the truth caused you to be alone, would you still search for it?",
+		answers: [
+			{answer: "Yes.", points: {Black: 3}},
+			{answer: "No.", points: {White: 3}}
+		]
+	},
+
+
+	// 25th question
+	{
+		question: "If the truth caused you to be alone, would you still search for it?",
+		answers: [
+			{answer: "Yes.", points: {Black: 3}},
+			{answer: "No.", points: {White: 3}}
+		]
+	},
+
+	{
+		question: "Do you prefer the peace of order, or the excitement of chaos?",
+		answers: [
+			{answer: "Order.", points: {White: 2, Green: 1, Blue: 1}},
+			{answer: "Chaos.", points: {Black: 2, Red: 2, Green: 1}}
+		]
+	},
+
+	{
+		question: "Do you think humans are different from animals?",
+		answers: [
+			{answer: "Our intelligence and rationality is what separates us from simple animals.", points: {White: 2, Blue: 2}},
+			{answer: "Humans are just like animals, no more, no less.", points: {Black: 2, Green: 2}}
+		]
+	},
+
+	{
+		question: "What do you think matters most when making decisions?",
+		answers: [
+			{answer: "How it affects other people.", points: {White: 2, Green: 1}},
+			{answer: "How it affects me.", points: {Red: 2, Black: 1}}
+		]
+	},
+
+
+	// 30th question
+	{
+		question: "Do you believe that unconditional love exists?",
+		answers: [
+			{answer: "Yes.", points: {Red: 3}},
+			{answer: "No.", points: {Black: 2}}
 		]
 	},
 ];
